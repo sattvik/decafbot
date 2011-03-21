@@ -102,7 +102,7 @@ public final class Talker implements TextToSpeech.OnInitListener {
 
     /** Shuts down the TTS engine. */
     public void shutdown() {
-        if (isShutdown.compareAndSet(true, false)) {
+        if (isShutdown.compareAndSet(false, true)) {
             tts.shutdown();
         }
     }
