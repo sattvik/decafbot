@@ -1,0 +1,10 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := DecafBot
+LOCAL_CFLAGS    := -Werror
+LOCAL_SRC_FILES := decafbot.c
+LOCAL_LDLIBS    := -llog
+
+include $(BUILD_SHARED_LIBRARY)

@@ -93,23 +93,7 @@ public class GlobalThermonuclearWarActivity extends Activity {
         }
 
         @Override
-        protected Void doInBackground(final String... strategies) {
-            final int numStrategies = strategies.length;
-            for (int i = 0; i < numStrategies; ++i) {
-                if (isCancelled()) {
-                    break;
-                }
-                try {
-                    // think hard
-                    Thread.sleep(50L);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    break;
-                }
-                publishProgress(strategies[i], i, numStrategies);
-            }
-            return null;
-        }
+        protected native Void doInBackground(final String... strategies);
 
         @Override
         protected void onPreExecute() {
@@ -160,5 +144,9 @@ public class GlobalThermonuclearWarActivity extends Activity {
 
         builder.show();
         talker.say(getString(R.string.gtw_conclusion));
+    }
+
+    static {
+        System.loadLibrary("DecafBot");
     }
 }
