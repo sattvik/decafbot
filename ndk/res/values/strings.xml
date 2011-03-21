@@ -18,6 +18,16 @@
     </string>
     <string name="sure">Sure</string>
     <string name="no_thanks">No, thanks</string>
+    <string name="guess">Guess</string>
+    <string name="gtn.initial_prompt">Guess the number between 1 and 100.</string>
+    <string name="gtn.feedback_prompt">Your guess was %1$s.  You have %2$d tries left.</string>
+    <string name="gtn.not_a_number">not a number</string>
+    <string name="gtn.too_low">too low</string>
+    <string name="gtn.too_high">too high</string>
+    <string name="gtn.thinking">I\'m thinking of a number.</string>
+    <string name="gtn.player_won">Congratulations, you won!</string>
+    <string name="gtn.player_lost">You lost.</string>
+    <string name="gtn.end_dialog">%s   Would you like to play again?</string>
     <string-array name="gtw_strategies">
         <item>U.S. First Strike</item>
         <item>U.S.S.R. First Strike</item>

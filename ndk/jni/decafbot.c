@@ -1,9 +1,10 @@
 #include<jni.h>
 #include<stdlib.h>
 #include<unistd.h>
-
-
 #include<android/log.h>
+#include "decafbot_jni_GuessTheNumberActivity.h"
+
+
 #define LOG_TAG "DecafBotJNI"
 #define LOGE(...) __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 
@@ -109,4 +110,54 @@ JNIEXPORT jobject JNICALL Java_decafbot_jni_GlobalThermonuclearWarActivity_00024
     (*env)->CallVoidMethod(env, task, publishMethod, progressData);
   }
   return NULL;
+}
+
+/******************************/
+/***   GUESS THE NUMBER    ****/
+/******************************/
+
+static jint guessesLeft;
+static jint theNumber;
+
+/*
+ * Class:     decafbot_jni_GuessTheNumberActivity
+ * Method:    nativeInitGame
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_decafbot_jni_GuessTheNumberActivity_nativeInitGame
+(JNIEnv *env, jobject activity, jint number) {
+  guessesLeft = 10L;
+  theNumber =  number;
+}
+
+
+/*
+ * Class:     decafbot_jni_GuessTheNumberActivity
+ * Method:    analyzeGuess
+ * Signature: (I)I
+ */
+JNIEXPORT jint JNICALL Java_decafbot_jni_GuessTheNumberActivity_analyzeGuess
+(JNIEnv* env, jobject activity, jint guess) {
+  if(guess == theNumber) {
+    return decafbot_jni_GuessTheNumberActivity_PLAYER_WON;
+  }
+  guessesLeft -= 1;
+  if (guessesLeft <= 0) {
+    return decafbot_jni_GuessTheNumberActivity_PLAYER_LOST;
+  }
+  if (guess < theNumber) {
+    return decafbot_jni_GuessTheNumberActivity_TOO_LOW;
+  } else {
+    return decafbot_jni_GuessTheNumberActivity_TOO_HIGH;
+  }
+}
+
+/*
+ * Class:     decafbot_jni_GuessTheNumberActivity
+ * Method:    guessesLeft
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_decafbot_jni_GuessTheNumberActivity_guessesLeft
+(JNIEnv* env, jobject activity) {
+  return guessesLeft;
 }
