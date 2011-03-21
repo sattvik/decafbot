@@ -91,7 +91,7 @@ public class GameChooserActivity extends Activity {
     private void confirmGlobalThermonuclearWar() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.game_name_global_thermonuclear_war);
-        builder.setMessage(R.string.gtw_confirm_game);
+        builder.setMessage(R.string.chooser_confirm_nuke);
         builder.setNegativeButton(R.string.later,
                                   new DialogInterface.OnClickListener() {
                                       public void onClick(
@@ -109,7 +109,7 @@ public class GameChooserActivity extends Activity {
                                       }
                                   });
         builder.show();
-        talker.say(getString(R.string.gtw_confirm_game));
+        talker.say(getString(R.string.chooser_confirm_nuke));
     }
 
     /** Launches the game ‘Global thermonuclear war’ */

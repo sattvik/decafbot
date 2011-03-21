@@ -29,15 +29,136 @@
 package decafbot.jni;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 /**
  * The game, ‘Global thermonuclear war’, modelled from the WOPR.
  *
- * @author  Daniel Solano Gómez
+ * @author Daniel Solano Gómez
  */
 public class GlobalThermonuclearWarActivity extends Activity {
+    /** Adapter showing failed strategies. */
+    private ArrayAdapter<String> adapter;
+    private Talker talker;
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_PROGRESS);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.global_thermonuclear_war);
+
+        // set up list view
+        adapter = new ArrayAdapter<String>(this,
+                                           android.R.layout.simple_list_item_1);
+        ListView listView = (ListView) findViewById(R.id.gtw_strategy_list);
+        listView.setAdapter(adapter);
+
+        // kick off some learning
+        LearnTask task = new LearnTask();
+        task.execute(getResources().getStringArray(R.array.gtw_strategies));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        talker=new Talker(this);
+    }
+
+    @Override
+    protected void onPause() {
+        talker.shutdown();
+        talker=null;
+        super.onPause();
+    }
+
+    /** Tasks that simulates learning the futility of playing the game. */
+    private class LearnTask extends AsyncTask<String, Object, Void> {
+        /** The maximum progress value. */
+        private static final int MAX_PROGRESS = 10000;
+
+        @Override
+        protected void onPostExecute(final Void aVoid) {
+            super.onPostExecute(aVoid);
+            // hide progress bar
+            setProgress(MAX_PROGRESS);
+            // notify results
+            drawConclusion();
+        }
+
+        @Override
+        protected Void doInBackground(final String... strategies) {
+            final int numStrategies = strategies.length;
+            for (int i = 0; i < numStrategies; ++i) {
+                if (isCancelled()) {
+                    break;
+                }
+                try {
+                    // think hard
+                    Thread.sleep(50L);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+                publishProgress(strategies[i], i, numStrategies);
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            setProgress(0);
+        }
+
+        @Override
+        protected void onProgressUpdate(final Object... values) {
+            final String strategy = (String) values[0];
+            final int strategyNumber = (Integer) values[1];
+            final int totalStrategies = (Integer) values[2];
+            // update progress
+            setProgress(MAX_PROGRESS * strategyNumber / totalStrategies);
+            // add strategy to view
+            adapter.add(strategy);
+            super.onProgressUpdate(values);
+        }
+    }
+
+    /** Notifies the user of the futility of playing the game. */
+    private void drawConclusion() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.game_name_global_thermonuclear_war);
+        builder.setMessage(R.string.gtw_conclusion);
+        builder.setNegativeButton(R.string.no_thanks,
+                                  new DialogInterface.OnClickListener() {
+                                      public void onClick(
+                                              final DialogInterface dialogInterface,
+                                              final int i) {
+                                          // nothing else to do, finish the activity
+                                          finish();
+                                      }
+                                  });
+        builder.setPositiveButton(R.string.sure,
+                                  new DialogInterface.OnClickListener() {
+                                      public void onClick(
+                                              final DialogInterface dialogInterface,
+                                              final int i) {
+                                          // launch guess the number
+                                          startActivity(new Intent(
+                                                  GlobalThermonuclearWarActivity.this,
+                                                  GuessTheNumberActivity.class));
+                                          // nothing more
+                                          finish();
+                                      }
+                                  });
+
+        builder.show();
+        talker.say(getString(R.string.gtw_conclusion));
     }
 }

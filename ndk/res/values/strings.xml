@@ -8,12 +8,16 @@
     <string name="game.name.guess_the_number">Guess the number</string>
     <string name="game.name.global_thermonuclear_war">Global thermonuclear war
     </string>
-    <string name="gtw.confirm_game">Wouldn\'t you prefer a nice game of guess
-        the number?
+    <string name="chooser.confirm_nuke">Wouldn\'t you prefer a nice game of
+        guess the number?
     </string>
     <string name="later">Later</string>
-    <string name="gtw.testing_strategies">Testing strategies…</string>
-    <string name="gtw.testing_strategy">Testing strategy:\n%s</string>
+    <string name="gtw.testing_strategies">Testing strategies:</string>
+    <string name="gtw.conclusion">A strange game. The only winning move is not
+        to play. How about a nice game of guess the number?
+    </string>
+    <string name="sure">Sure</string>
+    <string name="no_thanks">No, thanks</string>
     <string-array name="gtw_strategies">
         <item>U.S. First Strike</item>
         <item>U.S.S.R. First Strike</item>
