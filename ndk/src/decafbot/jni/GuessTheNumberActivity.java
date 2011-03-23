@@ -64,6 +64,8 @@ public class GuessTheNumberActivity extends Activity {
                 handleGuess();
             }
         });
+        talker = new Talker(this);
+        initGame();
     }
 
     /**
@@ -178,17 +180,9 @@ public class GuessTheNumberActivity extends Activity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        talker = new Talker(this);
-        initGame();
-    }
-
-    @Override
-    protected void onPause() {
+    protected void onDestroy() {
         talker.shutdown();
-        talker = null;
-        super.onPause();
+        super.onDestroy();
     }
 
     static {

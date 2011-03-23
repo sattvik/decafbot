@@ -33,7 +33,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -44,17 +43,12 @@ import android.widget.RadioGroup;
  * @author Daniel Solano Gómez
  */
 public class GameChooserActivity extends Activity {
-    /** Log tag for the class. */
-    private static final String TAG = "GameChooser";
-    /** Whether or not this is the first time the activity has been loaded. */
-    private boolean firstTime;
     /** Utility for talking. */
     private Talker talker;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        firstTime = (savedInstanceState == null);
         setContentView(R.layout.game_chooser);
         Button chooseButton = (Button) findViewById(R.id.choose_button);
         chooseButton.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +56,11 @@ public class GameChooserActivity extends Activity {
                 handleSelection();
             }
         });
+        talker = new Talker(this);
+        // greet the first time
+        if (savedInstanceState == null) {
+            talker.say(getString(R.string.greetings));
+        }
     }
 
     /**
@@ -82,7 +81,6 @@ public class GameChooserActivity extends Activity {
 
     /** Starts the game ‘Choose the number’. */
     private void launchGuessTheNumber() {
-        Log.d(TAG, "Launching guess the number");
         startActivity(new Intent(this, GuessTheNumberActivity.class));
         finish();
     }
@@ -114,24 +112,12 @@ public class GameChooserActivity extends Activity {
 
     /** Launches the game ‘Global thermonuclear war’ */
     private void launchGlobalThermonuclearWar() {
-        Log.d(TAG, "Launching global thermonuclear war");
         startActivity(new Intent(this, GlobalThermonuclearWarActivity.class));
         finish();
     }
-
     @Override
-    protected void onResume() {
-        super.onResume();
-        talker = new Talker(this);
-        if (firstTime) {
-            talker.say(getString(R.string.greetings));
-        }
-    }
-
-    @Override
-    protected void onPause() {
+    protected void onDestroy() {
         talker.shutdown();
-        talker = null;
-        super.onPause();
+        super.onDestroy();
     }
 }

@@ -53,6 +53,7 @@ public class GlobalThermonuclearWarActivity extends Activity {
         requestWindowFeature(Window.FEATURE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.global_thermonuclear_war);
+        talker=new Talker(this);
 
         // set up list view
         adapter = new ArrayAdapter<String>(this,
@@ -66,16 +67,9 @@ public class GlobalThermonuclearWarActivity extends Activity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        talker=new Talker(this);
-    }
-
-    @Override
-    protected void onPause() {
+    protected void onDestroy() {
         talker.shutdown();
-        talker=null;
-        super.onPause();
+        super.onDestroy();
     }
 
     /** Tasks that simulates learning the futility of playing the game. */
