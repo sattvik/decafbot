@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <TextView android:layout_height="wrap_content"
+              android:layout_width="fill_parent"
+              android:text="@string/greetings"
+              style="@android:style/TextAppearance.Medium"/>
+    <RadioGroup android:id="@+id/game_chooser_list"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+        <RadioButton android:id="@+id/game_guess_the_number"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/game.name.guess_the_number"
+                     android:checked="true"/>
+        <RadioButton android:id="@+id/game_global_thermonuclear_war"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/game.name.global_thermonuclear_war"/>
+    </RadioGroup>
+    <Button android:id="@+id/choose_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_button_text"/>
+</LinearLayout>
+
