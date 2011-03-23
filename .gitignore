@@ -2,6 +2,10 @@
 armeabi/
 bin/
 gen/
+lib_managed/
 out/
+project/boot/
+src_managed/
+target/
 *.iml
 local.properties
