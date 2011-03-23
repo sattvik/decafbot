@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DecafClojure" default="help">
+
+<!-- The local.properties file is created and updated by the 'android'
+     tool.
+     It contains the path to the SDK. It should *NOT* be checked into
+     Version Control Systems. -->
+    <property file="local.properties" />
+
+    <!-- The build.properties file can be created by you and is never touched
+         by the 'android' tool. This is the place to change some of the
+         default property values used by the Ant rules.
+         Here are some properties you may want to change/update:
+
+         source.dir
+             The name of the source directory. Default is 'src'.
+         out.dir
+             The name of the output directory. Default is 'bin'.
+
+         Properties related to the SDK location or the project target should
+         be updated using the 'android' tool with the 'update' action.
+
+         This file is an integral part of the build system for your
+         application and should be checked into Version Control Systems.
+
+         -->
+    <property file="build.properties" />
+
+    <!-- The default.properties file is created and updated by the 'android'
+         tool, as well as ADT.
+         This file is an integral part of the build system for your
+         application and should be checked into Version Control Systems. -->
+    <property file="default.properties" />
+
+
+    <!-- Required pre-setup import -->
+    <import file="${sdk.dir}/tools/ant/pre_setup.xml" />
+
+
+<!-- extension targets. Uncomment the ones where you want to do custom work
+     in between standard targets -->
+<!--
+    <target name="-pre-build">
+    </target>
+    <target name="-pre-compile">
+    </target>
+
+    [This is typically used for code obfuscation.
+     Compiled code location: ${out.classes.absolute.dir}
+     If this is not done in place, override ${out.dex.input.absolute.dir}]
+    <target name="-post-compile">
+    </target>
+-->
+
+    <!-- Modified input directories -->
+    <property name="source.dir" value="src/java" />
+    <property name="clojure.source.dir" value="src/clojure" />
+    <property name="clojure.source.absolute.dir" location="${clojure.source.dir}" />
+
+    <!-- Clojure output directories -->
+    <property name="out.dir" value="bin"/>
+    <property name="clojure.out.dir" value="${out.dir}" />
+    <property name="clojure.out.absolute.dir" location="${clojure.out.dir}" />
+    <property name="clojure.out.classes.dir" value="${clojure.out.absolute.dir}/classes" />
+    <property name="clojure.out.classes.absolute.dir" location="${clojure.out.classes.dir}" />
+
+    <!-- Ensure that the Java source directory exists since Git does not
+	 preserve empty directories -->
+    <target name="-pre-build">
+        <mkdir dir="${source.absolute.dir}"/>
+    </target>
+
+    <target name="-clojure-dirs">
+        <mkdir dir="${clojure.out.classes.absolute.dir}" />
+    </target>
+
+    <target name="-clojure-compile" depends="-clojure-dirs">
+	<java classname="clojure.lang.Compile"
+	      classpathref="android.target.classpath"
+	      fork="true"
+	      failonerror="true">
+	    <sysproperty key="clojure.compile.path" value="${clojure.out.classes.absolute.dir}"/>
+	    <classpath>
+		<pathelement path="${clojure.source.absolute.dir}"/>
+		<path refid="jar.libs.ref"/>
+		<fileset dir="${jar.libs.dir}" includes="*.jar" />
+		<pathelement path="${out.classes.absolute.dir}"/>
+	    </classpath>
+	    <!-- Add Clojure namespaces here. -->
+	    <arg value="decafbot.clojure.talker"/>
+	    <arg value="decafbot.clojure.utils"/>
+	    <arg value="decafbot.clojure.GuessTheNumberActivity"/>
+	    <arg value="decafbot.clojure.GlobalThermonuclearWarActivity"/>
+	    <arg value="decafbot.clojure.GameChooserActivity"/>
+	</java>
+    </target>
+
+    <target name="compile" depends="android_rules.compile,-clojure-compile"/>
+
+
+    <!-- Execute the Android Setup task that will setup some properties
+         specific to the target, and import the build rules files.
+
+         The rules file is imported from
+            <SDK>/tools/ant/
+         Depending on the project type it can be either:
+         - main_rules.xml
+         - lib_rules.xml
+         - test_rules.xml
+
+         To customize existing targets, there are two options:
+         - Customize only one target:
+             - copy/paste the target into this file, *before* the
+               <setup> task.
+             - customize it to your needs.
+         - Customize the whole script.
+             - copy/paste the content of the rules files (minus the top node)
+               into this file, *after* the <setup> task
+             - disable the import of the rules by changing the setup task
+               below to <setup import="false" />.
+             - customize to your needs.
+    -->
+    <setup />
+
+</project>
