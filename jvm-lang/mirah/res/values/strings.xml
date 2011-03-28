@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DecafBot Mirah</string>
+    <string name="choose_button_text">Choose</string>
+    <string name="choose_game">Choose a game:</string>
+    <string name="greetings">Greetings Professor Falken. Shall we play a game?
+    </string>
+    <string name="game.name.guess_the_number">Guess the number</string>
+    <string name="game.name.global_thermonuclear_war">Global thermonuclear war
+    </string>
+    <string name="chooser.confirm_nuke">Wouldn\'t you prefer a nice game of
+        guess the number?
+    </string>
+    <string name="later">Later</string>
+    <string name="gtw.testing_strategies">Testing strategies:</string>
+    <string name="gtw.conclusion">A strange game. The only winning move is not
+        to play. How about a nice game of guess the number?
+    </string>
+    <string name="sure">Sure</string>
+    <string name="no_thanks">No, thanks</string>
+    <string name="guess">Guess</string>
+    <string name="gtn.initial_prompt">Guess the number between 1 and 100.</string>
+    <string name="gtn.feedback_prompt">Your guess was %1$s.  You have %2$d tries left.</string>
+    <string name="gtn.not_a_number">not a number</string>
+    <string name="gtn.too_low">too low</string>
+    <string name="gtn.too_high">too high</string>
+    <string name="gtn.thinking">I\'m thinking of a number.</string>
+    <string name="gtn.player_won">Congratulations, you won!</string>
+    <string name="gtn.player_lost">You lost.</string>
+    <string name="gtn.end_dialog">%s   Would you like to play again?</string>
+    <string-array name="gtw_strategies">
+        <item>U.S. First Strike</item>
+        <item>U.S.S.R. First Strike</item>
+        <item>NATO / Warsaw Pact</item>
+        <item>Far East Strategy</item>
+        <item>U.S. / U.S.S.R. escalation</item>
+        <item>Middle East War</item>
+        <item>U.S.S.R. / China Attack</item>
+        <item>India / Pakistan War</item>
+        <item>Mediterranean War</item>
+        <item>Hong Kong Variant</item>
+        <item>SEATO Decapitating</item>
+        <item>Cuban Provocation</item>
+        <item>Inadvertent</item>
+        <item>Atlantic Heavy</item>
+        <item>Cuban Paramilitary</item>
+        <item>Nicaraguan Pre-emptive</item>
+        <item>Pacific Territorial</item>
+        <item>Burmese Theaterwide</item>
+        <item>Turkish Decoy</item>
+        <item>Argentina Escalation</item>
+        <item>Iceland Maximum</item>
+        <item>Arabian Theaterwide</item>
+        <item>U.S. Subversion</item>
+        <item>Australian Maneuver</item>
+        <item>Sudan Surprise</item>
+        <item>NATO Territorial</item>
+        <item>Zaire Alliance</item>
+        <item>Iceland Incident</item>
+        <item>English Escalation</item>
+        <item>Zaire Screen</item>
+        <item>Middle East Heavy</item>
+        <item>Mexican Takeover</item>
+        <item>Chad Alert</item>
+        <item>Saudi Maneuver</item>
+        <item>African Territorial</item>
+        <item>Ethiopian Calamity</item>
+        <item>Turkish Heavy</item>
+        <item>NATO Incursion</item>
+        <item>U.S. Defense</item>
+        <item>Cambodian Heavy</item>
+        <item>(Warsaw) Pact Medium</item>
+        <item>Arctic Minimal</item>
+        <item>Mexican Domestic</item>
+        <item>Taiwanese Theaterwide</item>
+        <item>Pacific Maneuver</item>
+        <item>Portugal Revolution</item>
+        <item>Albanian Decoy</item>
+        <item>Palestinian Local</item>
+        <item>Moroccan Minimal</item>
+        <item>Czech Option</item>
+        <item>French Alliance</item>
+        <item>Arabian Clandestine</item>
+        <item>Gabon Rebellion</item>
+        <item>Northern Maximum</item>
+        <item>SEATO Takeover</item>
+        <item>Hawaiian Escalation</item>
+        <item>Iranian Maneuver</item>
+        <item>NATO Containment</item>
+        <item>Swiss Incident</item>
+        <item>Cuba Minimal</item>
+        <item>Iceland Escalation</item>
+        <item>Vietnamese Retaliation</item>
+        <item>Syrian Provocation</item>
+        <item>Libyan Local</item>
+        <item>Gabon Takeover</item>
+        <item>Romanian War</item>
+        <item>Middle East Offensive</item>
+        <item>Denmark Massive</item>
+        <item>Chile Confrontation</item>
+        <item>South African Subversion</item>
+        <item>U.S.S.R. Alert</item>
+        <item>Nicaraguan Thrust</item>
+        <item>Greenland Domestic</item>
+        <item>Iceland Heavy</item>
+        <item>Kenya Option</item>
+        <item>Pacific Defense</item>
+        <item>Uganda Maximum</item>
+        <item>Thai Subversion</item>
+        <item>Romanian Strike</item>
+        <item>Pakistan Sovereignty</item>
+        <item>Afghan Misdirection</item>
+        <item>Thai Variation</item>
+        <item>Northern Territorial</item>
+        <item>Polish Paramilitary</item>
+        <item>South African Offensive</item>
+        <item>Panama Misdirection</item>
+        <item>Scandinavian Domestic</item>
+        <item>Jordan Pre-emptive</item>
+        <item>English Thrust</item>
+        <item>Burmese Manuever</item>
+        <item>Spain Counter</item>
+        <item>Arabian Offensive</item>
+        <item>Chad Interdiction</item>
+        <item>Taiwan Misdirection</item>
+        <item>Bangladesh Theaterwide</item>
+        <item>Ethiopian Local</item>
+        <item>Italian Takeover</item>
+        <item>Vietnamese Incident</item>
+        <item>English Pre-emptive</item>
+        <item>Denmark Alternate</item>
+        <item>Thai Confrontation</item>
+        <item>Taiwan Surprise</item>
+        <item>Brazilian Strike</item>
+        <item>Venezuela Sudden</item>
+        <item>Malaysian Alert</item>
+        <item>Israel Discretionary</item>
+        <item>Libyan Action</item>
+        <item>Palestinian Tactical</item>
+        <item>NATO Alternate</item>
+        <item>Cyprus Maneuver</item>
+        <item>Egypt Misdirection</item>
+        <item>Bangladesh Thrust</item>
+        <item>Kenya Defense</item>
+        <item>Bangladesh Containment</item>
+        <item>Vietnamese Strike</item>
+        <item>Albanian Containment</item>
+        <item>Gabon Surprise</item>
+        <item>Iraq Sovereignty</item>
+        <item>Vietnamese Sudden</item>
+        <item>Lebanon Interdiction</item>
+        <item>Taiwan Domestic</item>
+        <item>Algerian Sovereignty</item>
+        <item>Arabian Strike</item>
+        <item>Atlantic Sudden</item>
+        <item>Mongolian Thrust</item>
+        <item>Polish Decoy</item>
+        <item>Alaskan Discretionary</item>
+        <item>Canadian Thrust</item>
+        <item>Arabian Light</item>
+        <item>South African Domestic</item>
+        <item>Tunisian Incident</item>
+        <item>Malaysian Maneuver</item>
+        <item>Jamaica Decoy</item>
+        <item>Malaysian Minimal</item>
+        <item>Russian Sovereignty</item>
+        <item>Chad Option</item>
+        <item>Bangladesh War</item>
+        <item>Burmese Containment</item>
+        <item>Asian Theaterwide</item>
+        <item>Bulgarian Clandestine</item>
+        <item>Greenland Incursion</item>
+        <item>Egypt Surgical</item>
+        <item>Czech Heavy</item>
+        <item>Taiwan Confrontation</item>
+        <item>Greenland Maximum</item>
+        <item>Uganda Offensive</item>
+        <item>Caspian Defense</item>
+    </string-array>
+</resources>

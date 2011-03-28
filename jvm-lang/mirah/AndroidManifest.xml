@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="decafbot.mirah"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="4"
+              android:targetSdkVersion="9"/>
+    <application android:label="DecafBot Clojure" android:icon="@drawable/icon">
+        <activity android:name=".GameChooserActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".GlobalThermonuclearWarActivity"
+                  android:label="@string/game.name.global_thermonuclear_war"/>
+        <activity android:name=".GuessTheNumberActivity"
+                  android:label="@string/game.name.guess_the_number"/>
+    </application>
+</manifest> 
