@@ -3,6 +3,7 @@ armeabi/
 bin/
 boot/
 gen/
+generated_libs/
 lib_managed/
 out/
 src_managed/
