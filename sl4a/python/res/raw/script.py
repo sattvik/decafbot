@@ -176,11 +176,11 @@ class GlobalThermonuclearWar(Game):
   def confirm_game(self):
     "Suggest a different game."
     msg="Wouldn't you prefer a nice game of guess the number?"
-    droid.ttsSpeak(msg)
     droid.dialogCreateAlert(self.name,msg)
     droid.dialogSetPositiveButtonText("Yes")
     droid.dialogSetNegativeButtonText("Later")
     droid.dialogShow()
+    droid.ttsSpeak(msg)
     response=droid.dialogGetResponse().result
     droid.dialogDismiss()
     return get_dialog_result(response)
@@ -201,11 +201,11 @@ class GlobalThermonuclearWar(Game):
   def conclude_unwinnable(self):
     msg="A strange game.  The only winning move is not to play.  \
 	How about a nice game of guess the number?"
-    droid.ttsSpeak(msg)
     droid.dialogCreateAlert(self.name,msg)
     droid.dialogSetPositiveButtonText("Sure")
     droid.dialogSetNegativeButtonText("No, thanks")
     droid.dialogShow()
+    droid.ttsSpeak(msg)
     response=droid.dialogGetResponse().result
     droid.dialogDismiss()
     if get_dialog_result(response) is True:
@@ -292,11 +292,11 @@ class GuessTheNumber(Game):
       msg="You lost.  Would you like to play again?"
     else:
       return
-    droid.ttsSpeak(msg)
     droid.dialogCreateAlert(self.name,msg)
     droid.dialogSetPositiveButtonText("Yes")
     droid.dialogSetNegativeButtonText("No")
     droid.dialogShow()
+    droid.ttsSpeak(msg)
     response=droid.dialogGetResponse().result
     droid.dialogDismiss()
     if get_dialog_result(response) is True:
@@ -314,23 +314,23 @@ def get_dialog_result(response):
 def start_a_game():
   """ Allows the player to choose to play a game. """
   msg="Greetings Professor Falken.  Shall we play a game?"
-  droid.ttsSpeak(msg)
   droid.dialogCreateAlert("Games, Python Edition", msg)
   droid.dialogSetPositiveButtonText("Yes")
   droid.dialogSetNegativeButtonText("No")
   droid.dialogShow()
+  droid.ttsSpeak(msg)
   response=droid.dialogGetResponse().result
   droid.dialogDismiss()
   return get_dialog_result(response)
 
 def choose_game():
   msg="Choose a game:"
-  droid.ttsSpeak(msg)
   droid.dialogCreateAlert(msg)
   droid.dialogSetSingleChoiceItems(["Guess the number","Global thermonuclear war"])
   droid.dialogSetPositiveButtonText("OK")
   droid.dialogSetNegativeButtonText("Cancel")
   droid.dialogShow()
+  droid.ttsSpeak(msg)
   response=droid.dialogGetResponse().result
   if get_dialog_result(response):
     game=droid.dialogGetSelectedItems().result[0]
