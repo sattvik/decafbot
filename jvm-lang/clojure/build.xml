@@ -97,6 +97,10 @@
 
     <target name="compile" depends="android_rules.compile,-clojure-compile"/>
 
+    <target name="-debug-obfuscation-check" if="proguard.enabled">
+	<path id="out.dex.jar.input.ref"/>
+    </target>
+
 
     <!-- Execute the Android Setup task that will setup some properties
          specific to the target, and import the build rules files.
