@@ -191,6 +191,43 @@ To install the demo to a running emulator or an attached device use::
   rake install
 
 
+Ruby (Ruboto)
+`````````````
+
+From the Ruboto_ web site:
+
+  ruboto-core is a framework for writing full Android apps in Ruby. It includes
+  support libraries and generators for creating projects, classes, tests, and
+  more.
+
+The base directory for the Ruboto implementation is ``ruboto``, and the source
+code for the demo can be found in ``assets/scripts``.
+
+.. _Ruboto: http://ruboto.org/
+
+
+Additional prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to build and install the Ruby implementation, you will need:
+
+* JRuby_ 1.6.0 or above
+
+* Ant_, the build tool used by default on Android
+
+
+Building and installing
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Once you have all of the required programs properly set up, you should be able
+to create a package using::
+
+  rake debug
+
+To install the demo to a running emulator or an attached device use::
+
+  rake install
+
 
 Scala
 `````
