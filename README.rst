@@ -159,7 +159,7 @@ Additional prerequisites
 
 In order to build and install the Mirah implementation, you will need:
 
-* JRuby_ 1.6.0
+* JRuby_ 1.6.0 or above
 
 * Ant_, the build tool used by default on Android
 
