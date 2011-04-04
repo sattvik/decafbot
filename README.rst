@@ -68,13 +68,28 @@ base directory of the Android SDK.
 The implementations
 -------------------
 
+
 Clojure
 ```````
 
-Clojure_, a Lisp, is a dynamic and functional programming language that helps
-you write correct concurrent programs with a rich set of immutable persistent
-data structures and a software transactional memory to help manage mutable
-state.
+From the Clojure_ web site:
+
+  Clojure is a dynamic programming language that targets the Java Virtual
+  Machine (and the CLR ). It is designed to be a general-purpose language,
+  combining the approachability and interactive development of a scripting
+  language with an efficient and robust infrastructure for multithreaded
+  programming. Clojure is a compiled language - it compiles directly to JVM
+  bytecode, yet remains completely dynamic. Every feature supported by Clojure
+  is supported at runtime. Clojure provides easy access to the Java frameworks,
+  with optional type hints and type inference, to ensure that calls to Java can
+  avoid reflection.
+
+  Clojure is a dialect of Lisp, and shares with Lisp the code-as-data
+  philosophy and a powerful macro system. Clojure is predominantly a functional
+  programming language, and features a rich set of immutable, persistent data
+  structures. When mutable state is needed, Clojure offers a software
+  transactional memory system and reactive Agent system that ensure clean,
+  correct, multithreaded designs.
 
 The base directory for the Clojure implementation is in ``jvm-lang/clojure``,
 and the source code for the demo can be found in ``src/clojure``.
@@ -92,11 +107,13 @@ used by default on Android.
 Building and installing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To build the package, simply use ``ant debug``.  To install the demo to a
-running emulator or an attached device use ``ant install``.
+To build the package, simply use::
 
+  ant debug
 
+To install the demo to a running emulator or an attached device use::
 
+  ant install
 
 
 Licenses
