@@ -1,3 +1,4 @@
+gem "pindah", "=0.1.0"
 require "rubygems"
 require "pindah"
 
