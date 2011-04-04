@@ -118,6 +118,80 @@ To install the demo to a running emulator or an attached device use::
   ant install
 
 
+Mirah
+`````
+
+From the Mirah_ web site:
+
+  Mirah is a new way of looking at JVM languages. In attempting to build a
+  replacement for Java, we have followed a few guiding principals:
+
+  * No runtime library
+
+    Mirah does not impose any jar files upon you. YOU decide what your
+    application’s dependencies should be.
+
+  * Clean, simple syntax
+
+    We have borrowed heavily from Ruby, but added static typing and minor
+    syntax changes to support the JVM’s type system. The result is pleasing to
+    the eye, but as powerful as Java.
+
+  * Metaprogramming and macros
+
+    Mirah supports various mechanisms for compile-time metaprogramming and
+    macros. Much of the “open class” feel of dynamic languages is possible in
+    Mirah.
+
+  * No performance penalty
+
+    Because Mirah directly targets the JVM’s type system and JVM bytecode, it
+    performs exactly as well as Java.
+
+The base directory for the Mirah implementation is ``jvm-lang/mirah``, and the
+source code for the demo can be found in ``src``.
+
+.. _Mirah: http://www.mirah.org/
+
+
+Additional prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to build and install the Mirah implementation, you will need:
+
+* JRuby_ 1.6.0
+
+* Ant_, the build tool used by default on Android
+
+* Mirah and Pindah_ [#]_, which you can install using ``gem`` as follows::
+
+    gem install mirah
+    gem install --version '= 0.1.0' pindah
+
+You will also need to be sure the ``android`` executable from the SDK is in
+your path.  For most shells, this can be accomplished using::
+
+  export PATH=$PATH:"$ANDROID_SDK_HOME/tools"
+
+.. _JRuby: http://www.jruby.org
+.. _Pindah: https://github.com/mirah/pindah
+.. [#] The recently released 0.1.1 version seems to have broken something.  I
+       am going to look into it and submit a patch.
+
+Building and installing
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Once you have all of the required gems and your path properly set up, you
+should be able to create a package using::
+
+  rake debug
+
+To install the demo to a running emulator or an attached device use::
+
+  rake install
+
+
+
 Scala
 `````
 
