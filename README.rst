@@ -128,6 +128,9 @@ From the Scala_ web site:
   reduced by a factor of two to three when compared to an equivalent Java
   application.
 
+The base directory for the Scala implementation is ``jvm-lang/scala``,
+and the source code for the demo can be found in ``src/main/scala``.
+
 .. _Scala: http://www.scala-lang.org
 
 Additional prerequisites
