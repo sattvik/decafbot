@@ -116,6 +116,44 @@ To install the demo to a running emulator or an attached device use::
   ant install
 
 
+Scala
+`````
+
+From the Scala_ web site:
+
+  Scala is a general purpose programming language designed to express common
+  programming patterns in a concise, elegant, and type-safe way. It smoothly
+  integrates features of object-oriented and functional languages, enabling
+  Java and other programmers to be more productive. Code sizes are typically
+  reduced by a factor of two to three when compared to an equivalent Java
+  application.
+
+.. _Scala: http://www.scala-lang.org
+
+Additional prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You will need the `simple-build-tool
+<https://code.google.com/p/simple-build-tool/>`_.  Installation instructions
+are available from the sbt wiki at
+<https://code.google.com/p/simple-build-tool/wiki/Setup>.
+
+Building and installing
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Once you have set up your sbt script, you can build the demo package with::
+
+  sbt update package-debug
+
+To install the demo to the emulator, use::
+
+  sbt install-emulator
+
+To install the demo to an attached device, use::
+
+  sbt install-device
+
+
 Licenses
 --------
 
