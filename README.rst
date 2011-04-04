@@ -91,8 +91,8 @@ From the Clojure_ web site:
   transactional memory system and reactive Agent system that ensure clean,
   correct, multithreaded designs.
 
-The base directory for the Clojure implementation is in ``jvm-lang/clojure``,
-and the source code for the demo can be found in ``src/clojure``.
+The base directory for the Clojure implementation is ``jvm-lang/clojure``, and
+the source code for the demo can be found in ``src/clojure``.
 
 .. _Clojure: http://www.clojure.org
 
