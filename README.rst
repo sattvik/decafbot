@@ -3,6 +3,8 @@ The Decaffeinated Robot: Demo Source
 
 :Author: Daniel Solano Gómez
 
+.. contents::
+
 Introduction
 ------------
 
