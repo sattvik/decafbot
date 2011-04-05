@@ -317,3 +317,9 @@ This demo includes a compiled version of Clojure, which is licensed under the
 Eclipse Public License 1.0.  The details of the Clojure license are available
 in the file ``clojure-readme.txt``.
 
+JRuby
+`````
+
+This demo includes compiled portions of JRuby, which is licensed under a tri
+CPL/GPL/LGPL license.  Details are available in the files ``COPYING.JRUBY`` and
+``LICENSE.RUBY``.
