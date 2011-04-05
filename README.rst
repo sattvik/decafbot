@@ -246,6 +246,45 @@ To install the demo to a running emulator or an attached device use::
   rake install
 
 
+Python (SL4A)
+`````````````
+
+From the `Scripting Layer for Android`__ site:
+
+  Scripting Layer for Android (SL4A) brings scripting languages to Android by
+  allowing you to edit and execute scripts and interactive interpreters
+  directly on the Android device. These scripts have access to many of the APIs
+  available to full-fledged Android applications, but with a greatly simplified
+  interface that makes it easy to get things done.
+
+  Scripts can be run interactively in a terminal, in the background, or via
+  Locale. Python, Perl, JRuby, Lua, BeanShell, JavaScript, Tcl, and shell are
+  currently supported, and we're planning to add more. See the SL4A Video Help
+  playlist on YouTube for various demonstrations of SL4A's features.
+
+.. __: https://code.google.com/p/android-scripting/
+
+The base directory for the Python implementation is ``sl4a/python``, and the
+source code for the demo can be found in ``res/raw/script.py``.
+
+Additional prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the basic prerequisites, you will also need Ant_, the build tool
+used by default on Android.
+
+Building and installing
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To build the package, simply use::
+
+  ant debug
+
+To install the demo to a running emulator or an attached device use::
+
+  ant install
+
+
 Ruby (Ruboto)
 `````````````
 
@@ -378,3 +417,9 @@ JRuby
 This demo includes compiled portions of JRuby, which is licensed under a tri
 CPL/GPL/LGPL license.  Details are available in the files ``COPYING.JRUBY`` and
 ``LICENSE.RUBY``.
+
+Scripting Layer for Android
+```````````````````````````
+
+This demo includes the Scripting Layer for Android, which is licenses under the
+Apache License 2.0.  Details are available in the file ``LICENSE.SL4A``.
