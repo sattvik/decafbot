@@ -104,8 +104,6 @@ Additional prerequisites
 In addition to the basic prerequisites, you will also need Ant_, the build tool
 used by default on Android.
 
-.. _Ant: http://ant.apache.org/
-
 Building and installing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
