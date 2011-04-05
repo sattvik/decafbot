@@ -70,6 +70,61 @@ base directory of the Android SDK.
 The implementations
 -------------------
 
+C (NDK)
+```````
+
+From the `Android Native Development Tools`__ site:
+
+  The Android NDK is a companion tool to the Android SDK that lets you build
+  performance-critical portions of your apps in native code. It provides
+  headers and libraries that allow you to build activities, handle user input,
+  use hardware sensors, access application resources, and more, when
+  programming in C or C++. If you write native code, your applications are
+  still packaged into an .apk file and they still run inside of a virtual
+  machine on the device. The fundamental Android application model does not
+  change.
+
+  Using native code does not result in an automatic performance increase, but
+  always increases application complexity. If you have not run into any
+  limitations using the Android framework APIs, you probably do not need the
+  NDK. Read What is the NDK? for more information about what the NDK offers and
+  whether it will be useful to you.
+
+The base directory for the NDK implementation is ``ndk``.  The Java source code
+can be found in ``src`` and the C source code can be found in ``jni``.
+
+.. __: http://developer.android.com/sdk/ndk/index.html
+
+
+Additional prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You will need the following additional tools to build and install the NDK
+implementation of the demo:
+
+* Ant_, the build tool used by default on Android
+
+* The Native Development Tools (NDK), available at
+  <http://developer.android.com/sdk/ndk/index.html>
+
+To install the NDK, all you have to do is unpack it and make sure its base
+directory is in your path.
+
+Building and installing
+~~~~~~~~~~~~~~~~~~~~~~~
+
+First, you must compile the C source files using::
+
+  ndk-build
+
+Now, you can build the package using:
+
+  ant debug
+
+To install the demo to a running emulator or an attached device use::
+
+  ant install
+
 
 Clojure
 ```````
