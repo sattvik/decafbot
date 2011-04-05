@@ -110,6 +110,8 @@ implementation of the demo:
 To install the NDK, all you have to do is unpack it and make sure its base
 directory is in your path.
 
+.. _Ant: http://ant.apache.org
+
 Building and installing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
