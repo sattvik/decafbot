@@ -4,5 +4,5 @@ require "pindah"
 
 Pindah.spec = {
   :name => "mirah",
-  :target_version => "2.1"
+  :target_version => "1.6"
 }
